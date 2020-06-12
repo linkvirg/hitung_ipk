@@ -23,7 +23,7 @@
 						<div class="col-md-12 col-lg-6 text-center">
 							<p class="text-secondary">*Bila index nilai anda terdapat (+) atau (-), masukkan nilai tersebut pada kolom "Custom Index" dengan ketentuan nilai 0 s/d 4 per SKS-nya yakni sebagai berikut:<br>
 							A = 4, (A-) = 3.67, AB = 3.5, (B+) = 3.33, B = 3, (B-) = 2.67, BC = 2.5,<br>
-							(C+) = 2.33, C = 2, (C-) = 1.67, D = 1, E = 0<br><br></p>
+							(C+) = 2.33, C = 2, (C-) = 1.67, D = 1, E = 0<br><br>*Ketentuan nilai diatas belum tentu sesuai dengan standar nilai di kampus anda</p>
 						</div>
 					</div>
 					<div class="row mb-4">
@@ -206,7 +206,7 @@
 									</div>
 								</div>
 								<div class="card-footer bg-light">
-									<center><h6 id="ips_sm01">IPS : 0.00</h6></center>
+									<center><h6 id="ips_sm01">IPS : 0.00</h6> <h6 id="sks_sm01">Total SKS : 0</h6></center>
 								</div>
 							</div>
 						</div>
@@ -391,7 +391,7 @@
 									</div>
 								</div>
 								<div class="card-footer bg-light">
-									<center><h6 id="ips_sm02">IPS : 0.00</h6></center>
+									<center><h6 id="ips_sm02">IPS : 0.00</h6>  <h6 id="sks_sm02">Total SKS : 0</h6></center>
 								</div>
 							</div>
 						</div>
@@ -578,7 +578,7 @@
 									</div>
 								</div>
 								<div class="card-footer bg-light">
-									<center><h6 id="ips_sm03">IPS : 0.00</h6></center>
+									<center><h6 id="ips_sm03">IPS : 0.00</h6>  <h6 id="sks_sm03">Total SKS : 0</h6></center>
 								</div>
 							</div>
 						</div>
@@ -763,7 +763,7 @@
 									</div>
 								</div>
 								<div class="card-footer bg-light">
-									<center><h6 id="ips_sm04">IPS : 0.00</h6></center>
+									<center><h6 id="ips_sm04">IPS : 0.00</h6>  <h6 id="sks_sm04">Total SKS : 0</h6></center>
 								</div>
 							</div>
 						</div>
@@ -950,7 +950,7 @@
 									</div>
 								</div>
 								<div class="card-footer bg-light">
-									<center><h6 id="ips_sm05">IPS : 0.00</h6></center>
+									<center><h6 id="ips_sm05">IPS : 0.00</h6>  <h6 id="sks_sm05">Total SKS : 0</h6></center>
 								</div>
 							</div>
 						</div>
@@ -1135,7 +1135,7 @@
 									</div>
 								</div>
 								<div class="card-footer bg-light">
-									<center><h6 id="ips_sm06">IPS : 0.00</h6></center>
+									<center><h6 id="ips_sm06">IPS : 0.00</h6>  <h6 id="sks_sm06">Total SKS : 0</h6></center>
 								</div>
 							</div>
 						</div>
@@ -1322,7 +1322,7 @@
 									</div>
 								</div>
 								<div class="card-footer bg-light">
-									<center><h6 id="ips_sm07">IPS : 0.00</h6></center>
+									<center><h6 id="ips_sm07">IPS : 0.00</h6>  <h6 id="sks_sm07">Total SKS : 0</h6></center>
 								</div>
 							</div>
 						</div>
@@ -1507,7 +1507,7 @@
 									</div>
 								</div>
 								<div class="card-footer bg-light">
-									<center><h6 id="ips_sm08">IPS : 0.00</h6></center>
+									<center><h6 id="ips_sm08">IPS : 0.00</h6>  <h6 id="sks_sm08">Total SKS : 0</h6></center>
 								</div>
 							</div>
 							<!-- END ============================================================== Semester 08 ==============================================================-->
@@ -1529,10 +1529,34 @@
 		</form>
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript">
+		var today_sql = new Date().toISOString().slice(0, 10)+" "+new Date().toLocaleTimeString('en-GB');
+
+		var firebaseConfig = {
+			apiKey: "AIzaSyAvMg7xqSzRpZROLSu72mU2UbBUxNVtIcA",
+			authDomain: "hitung-ipk-6d6ce.firebaseapp.com",
+			databaseURL: "https://hitung-ipk-6d6ce.firebaseio.com",
+			projectId: "hitung-ipk-6d6ce",
+			storageBucket: "hitung-ipk-6d6ce.appspot.com",
+			messagingSenderId: "902553925622",
+			appId: "1:902553925622:web:eddb4ca00fa9c31ec3f9d7",
+			measurementId: "G-KS2PLY5JEJ"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+
+		var db = firebase.firestore();
+
+		var api_data = [];
+		$.getJSON( "http://ip-api.com/json/", function(data) {
+	    	api_data.push(data);
+		});
+
 		// memeriksa apakah data yang di input kustom atau tidak
 		function index(val, cus){
 			if (cus != "") {
@@ -1560,6 +1584,15 @@
 				return '0.00';
 			} else {
 				return nilai.toFixed(2).toString();
+			}
+		}
+
+		// memeriksa bahwa hasil penghitungan angka atau bukan
+		function angka_nan(nilai){
+			if (Number.isNaN(nilai)) {
+				return '0';
+			} else {
+				return nilai;
 			}
 		}
 
@@ -1989,22 +2022,68 @@
 			// Penghitungan akhir
 			var ipk = total_nilai / total_sks;
 
-			all.push({'nilai' : nilai});
-			all.push({'total_nilai' : total_nilai});
-			all.push({'total_sks' : total_sks});
-			all.push({'ipk' : ipk});
-
 			// Rubah tampilan nilai
-				document.getElementById("ips_sm01").innerHTML = "IPS : " + nan(ips_sm01);
-				document.getElementById("ips_sm02").innerHTML = "IPS : " + nan(ips_sm02);
-				document.getElementById("ips_sm03").innerHTML = "IPS : " + nan(ips_sm03);
-				document.getElementById("ips_sm04").innerHTML = "IPS : " + nan(ips_sm04);
-				document.getElementById("ips_sm05").innerHTML = "IPS : " + nan(ips_sm05);
-				document.getElementById("ips_sm06").innerHTML = "IPS : " + nan(ips_sm06);
-				document.getElementById("ips_sm07").innerHTML = "IPS : " + nan(ips_sm07);
-				document.getElementById("ips_sm08").innerHTML = "IPS : " + nan(ips_sm08);
+			document.getElementById("ips_sm01").innerHTML = "IPS : " + nan(ips_sm01);
+			document.getElementById("ips_sm02").innerHTML = "IPS : " + nan(ips_sm02);
+			document.getElementById("ips_sm03").innerHTML = "IPS : " + nan(ips_sm03);
+			document.getElementById("ips_sm04").innerHTML = "IPS : " + nan(ips_sm04);
+			document.getElementById("ips_sm05").innerHTML = "IPS : " + nan(ips_sm05);
+			document.getElementById("ips_sm06").innerHTML = "IPS : " + nan(ips_sm06);
+			document.getElementById("ips_sm07").innerHTML = "IPS : " + nan(ips_sm07);
+			document.getElementById("ips_sm08").innerHTML = "IPS : " + nan(ips_sm08);
+			
+			document.getElementById("sks_sm01").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm01);
+			document.getElementById("sks_sm02").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm02);
+			document.getElementById("sks_sm03").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm03);
+			document.getElementById("sks_sm04").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm04);
+			document.getElementById("sks_sm05").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm05);
+			document.getElementById("sks_sm06").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm06);
+			document.getElementById("sks_sm07").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm07);
+			document.getElementById("sks_sm08").innerHTML = "Total SKS : " + angka_nan(jml_sks_sm08);
 
 			document.getElementById("ipk").innerHTML = "Total Nilai : " + total_nilai.toFixed(2).toString() + ", Total SKS : " + total_sks.toString() + ", IPK : " + nan(ipk);
+
+			all = {
+				log_data : { 
+						log_sm01: ips_sm01 + ", " + jml_sks_sm01,
+						log_sm02: ips_sm02 + ", " + jml_sks_sm02,
+						log_sm03: ips_sm03 + ", " + jml_sks_sm03,
+						log_sm04: ips_sm04 + ", " + jml_sks_sm04,
+						log_sm05: ips_sm05 + ", " + jml_sks_sm05,
+						log_sm06: ips_sm06 + ", " + jml_sks_sm06,
+						log_sm07: ips_sm07 + ", " + jml_sks_sm07,
+						log_sm08: ips_sm08 + ", " + jml_sks_sm08,
+					},
+				log_total_nilai: total_nilai,
+				log_total_sks: total_sks,
+				log_ipk: ipk
+			};
+
+			db.collection("ipk").add({
+				db_date : today_sql,
+				db_kota: api_data[0].city,
+				db_provinsi: api_data[0].regionName,
+				db_ip: api_data[0].query,
+				db_data : { 
+						db_sm01: ips_sm01 + ", " + jml_sks_sm01,
+						db_sm02: ips_sm02 + ", " + jml_sks_sm02,
+						db_sm03: ips_sm03 + ", " + jml_sks_sm03,
+						db_sm04: ips_sm04 + ", " + jml_sks_sm04,
+						db_sm05: ips_sm05 + ", " + jml_sks_sm05,
+						db_sm06: ips_sm06 + ", " + jml_sks_sm06,
+						db_sm07: ips_sm07 + ", " + jml_sks_sm07,
+						db_sm08: ips_sm08 + ", " + jml_sks_sm08,
+					},
+				db_total_nilai: total_nilai,
+				db_total_sks: total_sks,
+				db_ipk: ipk
+			})
+			.then(function(docRef) {
+				console.log("ID: ", docRef.id);
+			})
+			.catch(function(error) {
+				console.error("Error adding document: ", error);
+			});
 
 			console.log(all);
 		}
